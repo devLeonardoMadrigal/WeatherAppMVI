@@ -23,5 +23,6 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "WeatherAppMVI"
-include(":app")
- 
+include(":presentation")
+include(":domain")
+include(":data")
