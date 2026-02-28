@@ -1,5 +1,10 @@
 plugins {
     alias(libs.plugins.android.library)
+
+    // Apply the KSP plugin
+
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -41,6 +46,15 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(project(":domain"))
 
+    //Dagger - Hilt
+    implementation("com.google.dagger:hilt-android:2.40.5")
+    implementation(libs.hilt)
+    ksp(libs.hilt.compiler)
+    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.3.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+
+
+
     // Location Services
     implementation("com.google.android.gms:play-services-location:20.0.0")
 
@@ -50,4 +64,5 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3")
 
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.4.1")
+
 }

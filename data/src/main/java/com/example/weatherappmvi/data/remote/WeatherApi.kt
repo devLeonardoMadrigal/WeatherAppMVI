@@ -12,6 +12,4 @@ interface WeatherApi {
         @Query("latitude") lat: Double,
         @Query("longitude") long: Double
     ) : WeatherDto
-
-
 }
